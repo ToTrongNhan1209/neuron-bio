@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background:#050507;font-family:'Inter',system-ui,sans-serif;">
+    <defs>
+      <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+        <stop offset="30%" stop-color="#000000" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+      </radialGradient>
+      <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#cccccc"/>
+      </linearGradient>
+      <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#10b981"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+      </pattern>
+    </defs>
+
+    <!-- Grid background -->
+    <rect width="1280" height="720" fill="#070709"/>
+    <rect width="1280" height="720" fill="url(#grid)"/>
+
+    <!-- Scientific Graphic in center/right -->
+    <g transform="translate(680, 100)">
+      
+  <!-- Tree trunks on top -->
+  <rect x="140" y="80" width="40" height="140" fill="rgba(255,255,255,0.15)" stroke="#ffffff" stroke-width="2"/>
+  <rect x="380" y="100" width="50" height="120" fill="rgba(255,255,255,0.15)" stroke="#ffffff" stroke-width="2"/>
+  <line x1="80" y1="220" x2="480" y2="220" stroke="#a1a1aa" stroke-width="2"/>
+
+  <!-- Deep underground mycelial network -->
+  <path d="M 160 220 C 180 280 220 320 280 340 C 340 320 380 280 405 220" fill="none" stroke="#22c55e" stroke-width="3.5"/>
+  <path d="M 280 340 C 260 380 240 420 220 460" fill="none" stroke="rgba(34,197,94,0.6)" stroke-width="2"/>
+  <path d="M 280 340 C 310 390 350 430 380 460" fill="none" stroke="rgba(34,197,94,0.6)" stroke-width="2"/>
+  <path d="M 160 220 C 130 300 100 360 80 420" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <path d="M 405 220 C 440 290 470 350 490 410" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+
+  <!-- Nutrient / signal transfer pulse dots -->
+  <circle cx="220" cy="290" r="7" fill="#ffffff"/>
+  <circle cx="280" cy="340" r="10" fill="#22c55e"/>
+  <circle cx="340" cy="300" r="7" fill="#ffffff"/>
+  
+    </g>
+
+    <!-- Dark vignette overlay for depth -->
+    <rect width="1280" height="720" fill="url(#vignette)"/>
+
+    <!-- Brand Logo in Top Right corner -->
+    <g transform="translate(1030, 48)">
+      <image href="/logo.png" width="180" height="42" />
+    </g>
+
+    <!-- Left side typography -->
+    <g transform="translate(80, 520)">
+      <!-- Kicker -->
+      <text x="0" y="0" fill="#a1a1aa" font-size="24" font-weight="600" letter-spacing="4" text-transform="uppercase">SINH THÁI HỌC</text>
+      <!-- Headline -->
+      <text x="0" y="55" fill="url(#textGrad)" font-size="52" font-weight="900" letter-spacing="-1">INTERNET RỪNG GIÀ</text>
+      <!-- Formula or key data badge -->
+      <g transform="translate(0, 105)">
+        <rect x="0" y="-30" width="490" height="42" rx="21" fill="rgba(34, 197, 94, 0.12)" stroke="#10b981" stroke-width="1.5" />
+        <text x="20" y="-3" fill="#10b981" font-size="20" font-weight="700" font-family="'JetBrains Mono', monospace">Wood Wide Web | Hyphae Network</text>
+      </g>
+    </g>
+  </svg>

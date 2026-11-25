@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background:#050507;font-family:'Inter',system-ui,sans-serif;">
+    <defs>
+      <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+        <stop offset="30%" stop-color="#000000" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+      </radialGradient>
+      <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#cccccc"/>
+      </linearGradient>
+      <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#22c55e"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+      </pattern>
+    </defs>
+
+    <!-- Grid background -->
+    <rect width="1280" height="720" fill="#070709"/>
+    <rect width="1280" height="720" fill="url(#grid)"/>
+
+    <!-- Scientific Graphic in center/right -->
+    <g transform="translate(680, 100)">
+      
+  <!-- Chloroplast / FMO complex network -->
+  <circle cx="260" cy="240" r="180" fill="none" stroke="rgba(34,197,94,0.15)" stroke-width="1" stroke-dasharray="6 6"/>
+  <circle cx="260" cy="240" r="120" fill="none" stroke="rgba(34,197,94,0.25)" stroke-width="1.5"/>
+  <circle cx="260" cy="240" r="60" fill="none" stroke="rgba(34,197,94,0.4)" stroke-width="2"/>
+  
+  <!-- Network nodes -->
+  <line x1="260" y1="240" x2="160" y2="150" stroke="#ffffff" stroke-width="2.5" opacity="0.8"/>
+  <line x1="260" y1="240" x2="360" y2="170" stroke="#ffffff" stroke-width="2.5" opacity="0.8"/>
+  <line x1="260" y1="240" x2="220" y2="350" stroke="#22c55e" stroke-width="3" opacity="0.9"/>
+  <line x1="160" y1="150" x2="360" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+  <line x1="360" y1="170" x2="420" y2="290" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+  <line x1="220" y1="350" x2="420" y2="290" stroke="#22c55e" stroke-width="3" opacity="0.9"/>
+
+  <!-- Quantum wave exciton ripple -->
+  <circle cx="220" cy="350" r="28" fill="rgba(34,197,94,0.2)" stroke="#22c55e" stroke-width="3"/>
+  <circle cx="220" cy="350" r="10" fill="#22c55e"/>
+
+  <!-- Nodes -->
+  <circle cx="260" cy="240" r="14" fill="#ffffff"/>
+  <circle cx="160" cy="150" r="12" fill="#ffffff"/>
+  <circle cx="360" cy="170" r="12" fill="#ffffff"/>
+  <circle cx="420" cy="290" r="16" fill="#22c55e"/>
+  
+  <!-- Quantum waveform path -->
+  <path d="M 80 400 Q 160 300 240 400 T 400 400 T 520 400" fill="none" stroke="rgba(34,197,94,0.7)" stroke-width="3"/>
+  
+    </g>
+
+    <!-- Dark vignette overlay for depth -->
+    <rect width="1280" height="720" fill="url(#vignette)"/>
+
+    <!-- Brand Logo in Top Right corner -->
+    <g transform="translate(1030, 48)">
+      <image href="/logo.png" width="180" height="42" />
+    </g>
+
+    <!-- Left side typography -->
+    <g transform="translate(80, 520)">
+      <!-- Kicker -->
+      <text x="0" y="0" fill="#a1a1aa" font-size="24" font-weight="600" letter-spacing="4" text-transform="uppercase">CƠ HỌC LƯỢNG TỬ</text>
+      <!-- Headline -->
+      <text x="0" y="55" fill="url(#textGrad)" font-size="52" font-weight="900" letter-spacing="-1">BÍ MẬT TRONG CHIẾC LÁ</text>
+      <!-- Formula or key data badge -->
+      <g transform="translate(0, 105)">
+        <rect x="0" y="-30" width="400" height="42" rx="21" fill="rgba(34, 197, 94, 0.12)" stroke="#22c55e" stroke-width="1.5" />
+        <text x="20" y="-3" fill="#22c55e" font-size="20" font-weight="700" font-family="'JetBrains Mono', monospace">η = 95–99% | FMO Complex</text>
+      </g>
+    </g>
+  </svg>

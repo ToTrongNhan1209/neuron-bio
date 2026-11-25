@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website Neuron (`@neuron-bio`)
 
-## Getting Started
+> Website chính thức của kênh **Neuron** (`https://www.youtube.com/@neuron-bio`), được thiết kế và dựng theo phong cách tối giản, khoa học của **Median Lab** (`https://www.median-lab.com/`). Sử dụng công nghệ **Next.js 16 (App Router)** mới nhất, Tailwind CSS, TypeScript, và Lucide React.
 
-First, run the development server:
+---
 
+## 🌟 Giới thiệu
+
+**Neuron** là kênh YouTube tiếng Việt chuyên sản xuất các video hoạt hình khoa học (animation 60fps) giải thích những bí ẩn của thế giới tự nhiên, sinh học vi mô, tế bào và lượng tử sinh học trên nền đen sâu tối giản.
+
+Website này bao gồm đầy đủ 3 trang chính và tính năng chuẩn mực:
+1. **Trang chủ (`/`)**:
+   - Hero Section với tiêu đề: *"Sinh học, Tế bào và animation"* cùng hiệu ứng radial-grid scan đặc trưng.
+   - Nút hành động trực diện: **"Ủng hộ kênh"** và **"Xem trên YouTube"**.
+   - Showcase video 6 chủ đề sinh học chuẩn phong cách Median x Neuron (tập 1 "Cây Hét Siêu Âm", tập 2 "Quang Hợp Lượng Tử", "Tế Bào T", "CRISPR-Cas9", "Mycelium", "Điện Thế Hoạt Động").
+   - **VideoModal**: Xem nhanh thông tin tập phim, mục lục timestamps, và danh sách tài liệu nghiên cứu tham khảo (Cell, Nature, eLife...).
+   - Section gợi ý chủ đề video tiếp theo & nút đăng ký kênh.
+2. **Trang Tham gia (`/join-us`)**:
+   - Giới thiệu công nghệ sản xuất animation sinh học 60fps bằng **HyperFrames + GSAP**.
+   - Bảng thông số: 60 FPS, 100% Vector SVG, kịch bản nghiên cứu >2.000 chữ, sound mix chuẩn -15 LUFS.
+   - 3 gói đồng hành (Creator, Creator Pro vĩnh viễn, Studio Collab phát hành quốc tế).
+   - FAQ Accordion 9 câu hỏi thường gặp.
+3. **Trang Ủng hộ (`/donate`)**:
+   - Hỗ trợ 2 cổng: **VietQR tự động** và **PayPal Quốc tế**.
+   - Tạo mã VietQR động theo thời gian thực (tùy chỉnh số tiền và nội dung chuyển khoản).
+   - Nút sao chép số tài khoản & nội dung chuyển khoản nhanh kèm hiệu ứng chúc mừng (confetti).
+   - **Nội dung gợi ý** (signature của Median): Bấm vào bất kỳ chip nào để tự động cập nhật QR và sao chép nội dung chuyển khoản.
+
+---
+
+## 🚀 Hướng dẫn Chạy Website
+
+### 1. Cài đặt dependencies (nếu cần)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Chạy ở môi trường Development
+```bash
+npm run dev
+```
+Mở trình duyệt tại: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build và chạy Production
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📁 Cấu trúc Dự án
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+website-neuron/
+├── public/
+│   ├── favicon.svg             # Icon favicon Neuron (hình nơ-ron vector)
+│   ├── logo.png                # Logo thương hiệu Neuron chuẩn nền trong suốt
+│   └── videos/                 # Thumbnail các tập phim khoa học sinh học
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout, Google Fonts (Plus Jakarta Sans, JetBrains Mono), SEO Metadata
+│   │   ├── globals.css         # Dark theme (#070709), scrollbar, bio-glow
+│   │   ├── page.tsx            # Trang chủ (Hero + Video Grid Showcase + CTA)
+│   │   ├── join-us/page.tsx    # Trang Tham gia / Source code & Playbook
+│   │   └── donate/page.tsx     # Trang Ủng hộ & VietQR tương tác
+│   ├── components/
+│   │   ├── Header.tsx          # Thanh điều hướng chuẩn Median style
+│   │   ├── Footer.tsx          # Footer với mạng xã hội, email tài trợ & watermark lớn
+│   │   ├── NeuronLogo.tsx      # Component hiển thị Logo Neuron
+│   │   └── VideoModal.tsx      # Modal xem chi tiết video, citations & timestamps
+│   └── data/
+│       └── videos.ts           # Dữ liệu 6 video khoa học sinh học
+└── package.json                # Next.js 16.4.6, React 19, Tailwind CSS
+```
